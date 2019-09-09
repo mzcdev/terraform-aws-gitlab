@@ -33,12 +33,16 @@ variable "instance_type" {
   default = "t2.medium"
 }
 
+variable "volume_id" {
+  default = ""
+}
+
 variable "volume_type" {
   default = "gp2"
 }
 
 variable "volume_size" {
-  default = "64"
+  default = "128"
 }
 
 variable "key_name" {

@@ -25,3 +25,12 @@ data "aws_ami" "this" {
     values = ["GitLab CE ${var.gitlab_version}.*"]
   }
 }
+
+data "template_file" "setup" {
+  template = file("${path.module}/template/setup.sh")
+
+  vars = {
+    DNS_NAME = local.domain
+    WORK_DIR = "/mnt/data"
+  }
+}
