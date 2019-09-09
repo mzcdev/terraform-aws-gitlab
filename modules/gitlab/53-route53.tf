@@ -16,6 +16,7 @@ resource "aws_route53_record" "this" {
 
   records = [
     # aws_eip.this.public_ip,
-    aws_alb.this[0].dns_name,
+    # aws_alb.this[0].dns_name,
+    aws_elb.this[0].dns_name,
   ]
 }
