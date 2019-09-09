@@ -26,6 +26,14 @@ variable "subnet_id" {
   default = "subnet-007a2bd91c7939e85"
 }
 
+variable "public_subnet_ids" {
+  default = [
+    "subnet-007a2bd91c7939e85",
+    "subnet-0477597c240b95aa8",
+    "subnet-0c91c5cd95b319b76",
+  ]
+}
+
 variable "gitlab_version" {
   default = "12"
 }

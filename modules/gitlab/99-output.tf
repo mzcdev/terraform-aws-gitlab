@@ -11,3 +11,7 @@ output "key_name" {
 output "public_ip" {
   value = aws_eip.this.public_ip
 }
+
+output "dns_name" {
+  value = aws_route53_record.this.*.name
+}

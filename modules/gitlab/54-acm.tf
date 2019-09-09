@@ -2,11 +2,11 @@
 
 resource "aws_acm_certificate" "cert" {
   count             = var.base_domain != "" ? 1 : 0
-  domain_name       = aws_route53_record.this[0].name
+  domain_name       = local.domain
   validation_method = "DNS"
 }
 
-resource "aws_route53_record" "cert_validation" {
+resource "aws_route53_record" "cert" {
   count   = var.base_domain != "" ? 1 : 0
   zone_id = data.aws_route53_zone.this[0].id
   name    = aws_acm_certificate.cert[0].domain_validation_options[0].resource_record_name
@@ -23,6 +23,6 @@ resource "aws_acm_certificate_validation" "cert" {
   certificate_arn = aws_acm_certificate.cert[0].arn
 
   validation_record_fqdns = [
-    aws_route53_record.cert_validation[0].fqdn,
+    aws_route53_record.cert[0].fqdn,
   ]
 }

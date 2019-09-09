@@ -22,6 +22,8 @@ module "gitlab" {
 
   subnet_id = var.subnet_id
 
+  public_subnet_ids = var.public_subnet_ids
+
   gitlab_version = var.gitlab_version
 
   allow_ip_address = var.allow_ip_address

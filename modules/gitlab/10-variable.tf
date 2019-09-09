@@ -12,6 +12,10 @@ variable "subnet_id" {
   default = ""
 }
 
+variable "public_subnet_ids" {
+  default = []
+}
+
 variable "gitlab_version" {
   default = "12"
 }
