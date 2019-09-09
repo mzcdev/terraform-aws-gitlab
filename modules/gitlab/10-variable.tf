@@ -48,3 +48,11 @@ variable "key_path" {
 variable "user_data" {
   default = ""
 }
+
+variable "domain" {
+  default = ""
+}
+
+variable "base_domain" {
+  default = ""
+}

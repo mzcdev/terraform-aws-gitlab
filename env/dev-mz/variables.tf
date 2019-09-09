@@ -41,6 +41,14 @@ variable "key_name" {
   default = "nalbam-seoul"
 }
 
+variable "domain" {
+  default = ""
+}
+
+variable "base_domain" {
+  default = "mzdev.be"
+}
+
 locals {
   full_name = "${var.city}-${var.stage}-${var.name}-${var.suffix}"
 }

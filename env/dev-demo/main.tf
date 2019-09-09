@@ -27,4 +27,6 @@ module "gitlab" {
   allow_ip_address = var.allow_ip_address
 
   key_name = var.key_name
+
+  base_domain = var.base_domain
 }
