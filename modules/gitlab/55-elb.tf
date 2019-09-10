@@ -11,6 +11,10 @@ resource "aws_elb" "this" {
     aws_instance.this.id
   ]
 
+  security_groups = [
+    aws_security_group.this.id
+  ]
+
   listener {
     instance_port     = 80
     instance_protocol = "http"
@@ -37,7 +41,7 @@ resource "aws_elb" "this" {
     healthy_threshold   = 2
     unhealthy_threshold = 2
     timeout             = 3
-    target              = "HTTP:80/-/health"
+    target              = "HTTP:80/users/confirmation/new"
     interval            = 10
   }
 
