@@ -14,8 +14,9 @@ resource "aws_instance" "this" {
   ]
 
   root_block_device {
-    volume_size = var.volume_size
-    volume_type = var.volume_type
+    volume_size           = var.volume_size
+    volume_type           = var.volume_type
+    delete_on_termination = false
   }
 
   tags = {
