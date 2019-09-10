@@ -42,7 +42,7 @@ variable "volume_type" {
 }
 
 variable "volume_size" {
-  default = "128"
+  default = "64"
 }
 
 variable "key_name" {
