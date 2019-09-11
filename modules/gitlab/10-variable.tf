@@ -64,3 +64,7 @@ variable "domain" {
 variable "base_domain" {
   default = ""
 }
+
+variable "slack_token" {
+  default = ""
+}

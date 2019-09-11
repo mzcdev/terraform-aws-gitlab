@@ -32,5 +32,6 @@ data "template_file" "setup" {
   vars = {
     DNS_NAME = local.domain
     WORK_DIR = "/mnt/data"
+    TOKEN    = var.slack_token
   }
 }

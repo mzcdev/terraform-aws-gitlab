@@ -14,3 +14,12 @@ if [ "${DNS_NAME}" != "" ]; then
 
     gitlab-ctl reconfigure
 fi
+
+# slack
+if [ "${TOKEN}" != "" ]; then
+curl -sL opspresso.com/tools/slack | bash -s -- \
+    --token="${TOKEN}" --username="gitlab" \
+    --footer_icon='https://about.gitlab.com/ico/favicon.ico' \
+    --footer="<https://${DNS_NAME}|gitlab>" \
+    --title="Launched Gitlab"
+fi
