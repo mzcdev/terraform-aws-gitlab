@@ -1,19 +1,20 @@
 # elb
 
 resource "aws_elb" "this" {
-  count = var.base_domain != "" ? 1 : 0
-
   name = var.name
 
   subnets = var.public_subnet_ids
 
-  instances = [
-    aws_instance.this.id
-  ]
-
   security_groups = [
     aws_security_group.this.id
   ]
+
+  listener {
+    instance_port     = 22
+    instance_protocol = "tcp"
+    lb_port           = 22
+    lb_protocol       = "tcp"
+  }
 
   listener {
     instance_port     = 80
@@ -28,13 +29,6 @@ resource "aws_elb" "this" {
     lb_port            = 443
     lb_protocol        = "https"
     ssl_certificate_id = aws_acm_certificate.cert[0].arn
-  }
-
-  listener {
-    instance_port     = 22
-    instance_protocol = "tcp"
-    lb_port           = 22
-    lb_protocol       = "tcp"
   }
 
   health_check {
@@ -53,4 +47,9 @@ resource "aws_elb" "this" {
   tags = {
     Name = var.name
   }
+}
+
+resource "aws_elb_attachment" "this" {
+  elb      = aws_elb.this.id
+  instance = aws_instance.this.id
 }

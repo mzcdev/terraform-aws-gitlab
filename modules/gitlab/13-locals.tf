@@ -5,3 +5,7 @@ locals {
 
   domain = var.domain != "" ? var.domain : local.default_domain
 }
+
+locals {
+  dns_name = var.base_domain != "" ? local.domain : aws_elb.this.dns_name
+}

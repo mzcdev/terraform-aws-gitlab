@@ -9,5 +9,5 @@ output "key_name" {
 }
 
 output "dns_name" {
-  value = aws_route53_record.this.*.name
+  value = local.dns_name
 }
