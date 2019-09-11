@@ -31,4 +31,6 @@ module "gitlab" {
   key_name = var.key_name
 
   base_domain = var.base_domain
+
+  slack_token = var.slack_token
 }
