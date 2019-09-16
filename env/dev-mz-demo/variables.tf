@@ -49,7 +49,3 @@ variable "base_domain" {
 variable "slack_token" {
   default = "T03FUG4UB/B8RQJGNR0/U7LtWJKf8E2gVkh1S1oASlG5"
 }
-
-locals {
-  full_name = "${var.city}-${var.stage}-${var.name}-${var.suffix}"
-}

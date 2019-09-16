@@ -45,7 +45,3 @@ variable "domain" {
 variable "base_domain" {
   default = "nalbam.com"
 }
-
-locals {
-  full_name = "${var.city}-${var.stage}-${var.name}-${var.suffix}"
-}
