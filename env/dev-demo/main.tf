@@ -16,7 +16,7 @@ provider "aws" {
 module "gitlab" {
   source = "../../modules/gitlab"
 
-  name = local.full_name
+  name = var.name
 
   vpc_id = var.vpc_id
 
