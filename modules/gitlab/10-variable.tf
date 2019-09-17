@@ -57,11 +57,11 @@ variable "user_data" {
   default = ""
 }
 
-variable "domain" {
+variable "dns_name" {
   default = ""
 }
 
-variable "base_domain" {
+variable "dns_root" {
   default = ""
 }
 

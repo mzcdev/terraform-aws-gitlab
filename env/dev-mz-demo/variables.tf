@@ -38,11 +38,11 @@ variable "key_name" {
   default = "nalbam-seoul"
 }
 
-variable "domain" {
+variable "dns_name" {
   default = ""
 }
 
-variable "base_domain" {
+variable "dns_root" {
   default = "mzdev.be"
 }
 

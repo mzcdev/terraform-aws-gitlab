@@ -38,10 +38,14 @@ variable "key_name" {
   default = "nalbam-seoul"
 }
 
-variable "domain" {
+variable "dns_name" {
   default = ""
 }
 
-variable "base_domain" {
+variable "dns_root" {
   default = "nalbam.com"
+}
+
+variable "slack_token" {
+  default = "T03FUG4UB/B8RQJGNR0/U7LtWJKf8E2gVkh1S1oASlG5"
 }

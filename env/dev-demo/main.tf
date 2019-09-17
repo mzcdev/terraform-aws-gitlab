@@ -14,6 +14,7 @@ provider "aws" {
 }
 
 module "gitlab" {
+  # source = "github.com/nalbam/terraform-aws-gitlab.git//modules/gitlab"
   source = "../../modules/gitlab"
 
   name = var.name
@@ -30,5 +31,8 @@ module "gitlab" {
 
   key_name = var.key_name
 
-  base_domain = var.base_domain
+  dns_name = var.dns_name
+  dns_root = var.dns_root
+
+  slack_token = var.slack_token
 }

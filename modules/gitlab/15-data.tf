@@ -30,7 +30,7 @@ data "template_file" "setup" {
   template = file("${path.module}/template/setup.sh")
 
   vars = {
-    DNS_NAME = local.domain
+    DNS_NAME = local.dns_name
     TOKEN    = var.slack_token
   }
 }

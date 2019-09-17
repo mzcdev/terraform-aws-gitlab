@@ -1,11 +1,7 @@
 # locals
 
 locals {
-  default_domain = var.base_domain != "" ? "git.${var.base_domain}" : ""
+  domain_name = var.dns_name != "" ? var.dns_name : "git.${var.dns_root}"
 
-  domain = var.domain != "" ? var.domain : local.default_domain
-}
-
-locals {
-  dns_name = var.base_domain != "" ? local.domain : aws_elb.this.dns_name
+  dns_name = var.dns_root != "" ? local.domain_name : aws_elb.this.dns_name
 }
