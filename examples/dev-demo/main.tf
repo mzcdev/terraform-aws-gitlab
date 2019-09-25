@@ -3,7 +3,7 @@
 terraform {
   backend "s3" {
     region = "ap-northeast-2"
-    bucket = "terraform-mz-seoul"
+    bucket = "terraform-nalbam-seoul"
     key    = "gitlab.tfstate"
   }
   required_version = ">= 0.12"
@@ -14,8 +14,8 @@ provider "aws" {
 }
 
 module "gitlab" {
-  # source = "github.com/nalbam/terraform-aws-gitlab.git//modules/gitlab"
-  source = "../../modules/gitlab"
+  # source = "github.com/nalbam/terraform-aws-gitlab"
+  source = "../../"
 
   name = var.name
 
