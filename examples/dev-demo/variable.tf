@@ -5,7 +5,7 @@ variable "region" {
 }
 
 variable "name" {
-  default = "seoul-dev-demo-gitlab"
+  default = "dev-demo-gitlab"
 }
 
 variable "vpc_id" {
