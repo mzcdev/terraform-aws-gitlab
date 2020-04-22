@@ -1,4 +1,4 @@
-# bastion
+# gitlab
 
 terraform {
   backend "s3" {
