@@ -28,6 +28,7 @@ module "gitlab" {
 
   gitlab_version = var.gitlab_version
 
+  allow_ssh_sg     = var.allow_ssh_sg
   allow_ip_address = var.allow_ip_address
 
   key_name = var.key_name
