@@ -53,5 +53,5 @@ variable "dns_root" {
 }
 
 variable "slack_token" {
-  default = "T03FUG4UB/B8RQJGNR0/U7LtWJKf8E2gVkh1S1oASlG5"
+  default = "XXXXX/XXXXX/XXXXX"
 }
