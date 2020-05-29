@@ -18,7 +18,7 @@ fi
 
 # slack
 if [ "$TOKEN" != "" ]; then
-curl -sL opspresso.com/tools/slack | bash -s -- \
+curl -sL opspresso.github.io/tools/slack.sh | bash -s -- \
     --token="$TOKEN" --username="gitlab" \
     --footer_icon='https://about.gitlab.com/ico/favicon.ico' \
     --footer="<https://$DNS_NAME|gitlab>" \
